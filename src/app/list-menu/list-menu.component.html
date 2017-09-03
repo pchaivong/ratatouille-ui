@@ -1,0 +1,15 @@
+<div class="container" style="margin: 2px;">
+
+      <div class="card" style="width: 20rem; margin-top: 2rem;" *ngFor="let menu of menuList">
+        <img class="card-img-top" 
+        src="http://via.placeholder.com/350x150" 
+        alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">{{menu.name}}</h4>
+          <h6 class="card-subtitle mb-2 text-muted">฿: <span>{{menu.price}}</span></h6>
+          <p class="card-text">{{menu.description}}</p>
+        </div>
+      </div>
+
+  </div>
+  
