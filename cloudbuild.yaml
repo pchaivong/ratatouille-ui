@@ -2,8 +2,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/npm'
   args: ['install']
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['test']
+
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '--tag=gcr.io/$PROJECT_ID/ratatouille-ui:0.0.1-dev', '.']
 images: ['gcr.io/$PROJECT_ID/ratatouille-ui:0.0.1-dev']
