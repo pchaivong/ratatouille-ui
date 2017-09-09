@@ -21,4 +21,8 @@ export class ListMenuComponent implements OnInit {
     })
   }
 
+  getMenuList(){
+    return this.menuList;
+  }
+
 }
