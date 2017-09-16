@@ -6,11 +6,10 @@
     -->
      <div class="form-group row">
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="roleName" placeholder="Enter new role"
-          (input)="roleName=$event.target.value">
+          <input #roleName type="text" class="form-control" id="roleName" placeholder="Enter new role">
         </div>
         <div class="col-sm-4">
-            <button type="submit" class="btn btn-primary" (click)="addRole(roleName)">Create</button>
+            <button type="submit" class="btn btn-primary" (click)="addRole(roleName.value)">Create</button>
         </div>
      </div>  
     </div>
