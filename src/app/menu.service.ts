@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MenuService {
 
-  private apiUrl = 'http://localhost:8080/menus'
+  private apiUrl = 'http://localhost:8080/api/menus'
 
   constructor(private http: Http) { }
 

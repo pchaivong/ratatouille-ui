@@ -1,0 +1,68 @@
+<div class="card" style="margin: 5rem;">
+    <div class="card-block">
+      <h4 class="card-title">New role</h4>
+    <!--
+      Menu Name
+    -->
+     <div class="form-group row">
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="roleName" placeholder="Enter new role"
+          (input)="roleName=$event.target.value">
+        </div>
+        <div class="col-sm-4">
+            <button type="submit" class="btn btn-primary" (click)="addRole(roleName)">Create</button>
+        </div>
+     </div>  
+    </div>
+  </div>
+  
+
+<div>
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Role</th>
+      <th># users </th>
+      <th>Action</th>
+    </thead>
+
+    <tbody *ngFor="let role of getRoles()"> 
+      <tr>
+        <th scope="row">{{role.id}}</th>
+        <th>{{role.name}}</th>
+        <th>3</th>
+        <th>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addRoleModal">
+              <span class="fa fa-pencil" aria-hidden="true"></span> Edit
+          </button>
+          <button class="btn btn-danger" (click)="deleteRole(role.id)">
+            <span class="fa fa-trash" aria-hidden="true"></span> Delete
+          </button>
+        </th>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <!-- Add new role modal -->
+  <div #addRoleModal class="modal fade" id="addRoleModal" tabindex="-1" role="dialog" aria-label="addRoleModalLabel"
+  aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addRoleModalLabel">Create new role</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <input value="Test"/>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
